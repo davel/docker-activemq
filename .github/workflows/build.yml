@@ -7,7 +7,7 @@ jobs:
         version: ['5.15.6', '5.15.9', '5.15.9-alpine']
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1.0
+      - uses: actions/checkout@v2
         name: Check out code
 
       - uses: mr-smithers-excellent/docker-build-push@v3
