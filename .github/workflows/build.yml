@@ -12,7 +12,7 @@ jobs:
 
       - uses: mr-smithers-excellent/docker-build-push@v3
         with:
-          directory: ${{ matrix.version }
+          directory: ${{ matrix.version }}
           image: davel/docker-activemq/activemq:${{ matrix.version }}
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
