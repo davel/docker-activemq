@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  docker-build:
+    strategy:
+      matrix:
+        version: ['5.15.6', '5.15.9', '5.15.9-alpine']
+
+    steps:
+      - uses: actions/checkout@v1.0
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v3
+        with:
+          directory: ${{ matrix.version }
+          image: davel/docker-activemq/activemq:${{ matrix.version }
+          registry: docker.pkg.github.com
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
