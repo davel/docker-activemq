@@ -4,7 +4,7 @@ jobs:
   docker-build:
     strategy:
       matrix:
-        version: ['5.15.6', '5.15.9', '5.15.9-alpine']
+        version: ['5.15.6', '5.15.6-alpine', '5.15.9', '5.15.9-alpine']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
