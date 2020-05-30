@@ -13,7 +13,8 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v3
         with:
           directory: ${{ matrix.version }}
-          image: docker-activemq/activemq:${{ matrix.version }}
+          image: activemq/activemq
+          tag: ${{ matrix.version }}
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
